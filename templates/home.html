@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Flight Ticket Fare</title>
+    
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+      body {
+      background: url("https://images.unsplash.com/photo-1654726478165-c70cc4a7828c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80") no-repeat center;
+      background-size: cover;
+      }
+      h1, h2 {
+      text-transform: capitalize;
+      font-weight: 400;
+      }
+      h2 {
+      margin: 0 0 0 8px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      .left-part, form {
+      padding: 25px;
+      }
+      .left-part {
+      text-align: center;
+      }
+
+      form { transform: scale(1.25);height: 500px; margin-top: 80px; 
+        margin-left: 500px; margin-right: 500px; 
+      background: rgba(0, 0, 0, 0.7); 
+      }
+      .title { text-align: center; height: 30px; margin-top: 00px;
+      
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info { text-align: center;
+      display: ruby-base-container;
+      flex-direction: column;
+      }
+      input, select {
+      padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      option:focus {
+      border: none;
+      }
+      option { 
+      background: black; 
+      border: none;
+      }
+
+      .block{ text-align: center; height: 50px; 
+        background: rgba(0, 0, 0, 0.7) ; height: 40px;
+        margin-left: 456px; margin-right: 456px;}
+   
+      .btn-item, button { align-items: center;
+      padding: 10px 5px;
+      margin-top: 20px;
+      border-radius: 5px; 
+      border: none;
+      background: #26a9e0; 
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      }
+      .btn-item { align-items: center;
+      display: flex;
+      margin: 20px 5px 0;
+      }
+      .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;}
+      button {
+      width: 50%;
+      }
+      button:hover, .btn-item:hover {
+      background: #85d6de;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+  
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block">
+        <h1 style="margin-top: 30px;">Flight Ticket Price Predictor</h1>
+      </div>
+
+      <form method="POST" action="/get_flight_price">
+        <div class="title"> 
+          <h2>Please Select</h2>
+        </div>
+        <div class="info">
+        <label></label>
+          <select  style="font-size:15px;" name = "airline">
+              <option value="airline" selected>Airline</option>
+              <option value="Air_India" >AirIndia</option>
+              <option value="AirAsia" >AirAsia</option>
+              <option value="GO_FIRST">GO_FIRST</option>
+              <option value="Indigo">Indigo</option>
+              <option value="SpiceJet" >SpiceJet</option>
+              <option value="Vistara">Vistara</option>
+          </select>
+
+        <label></label>
+          <select  style="font-size:15px;" name = "departure_time">
+              <option value="departure_time" selected>Departure</option>
+              <option value="Early_Morning" >Early_Morning</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening" >Evening</option>
+              <option value="Night">Night</option>
+              <option value="Late_Night">Late_Night</option>
+          </select>
+        <label></label>
+          <select  style="font-size:15px;" name = "stops">
+              <option value="stops" selected>Stops</option>
+              <option value="one" >one</option>
+              <option value="two_or_more">Two or More</option>
+              <option value="zero">Zero</option>
+          </select>
+
+        <label></label>
+          <select  style="font-size:15px;" name = "arrival_time">
+              <option value="arrival_time" selected>Arrival</option>
+              <option value="Early_Morning" >Early_Morning</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening" >Evening</option>
+              <option value="Night">Night</option>
+              <option value="Late_Night">Late_Night</option>
+          </select>
+
+        <label></label>
+          <select  style="font-size:15px;" name = "Class">
+              <option value="Class" selected>Class</option>
+              <option value="Economy" >Economy</option>
+              <option value="Business">Business</option>
+          </select>
+        
+        <input type= "date" name = 'days_left' id=" days_left" required="required" >
+        
+
+        <label></label>
+          <select  style="font-size:15px;" name = "source_city">
+              <option value="source_city" selected>Source City</option>
+              <option value="Delhi" >Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Bangalore" >Bangalore</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Hyderabad" >Hyderabad</option>
+              <option value="Chennai">Chennai</option>
+          </select>
+        <label></label>
+          <select  style="font-size:15px;" name = "destination_city">
+              <option value="destination_city" selected>Destination City</option>
+              <option value="Delhi" >Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Bangalore" >Bangalore</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Hyderabad" >Hyderabad</option>
+              <option value="Chennai">Chennai</option>
+        </select>
+      </div>
+        
+        <div class="center">
+        <button type="submit" ; href="/get_flight_price" >Show Ticket Price</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
